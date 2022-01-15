@@ -1,18 +1,10 @@
 const colors = require('colors/safe');
 
 const nums = process.argv.slice(2);
-let [num1, num2] = [nums[0], nums[1]];
-
-//process.argv.forEach((value, index) => {
-//	console.info(colors.bgYellow.black('forEach:', value + ': ' + index));
-//});
-
-if (num2 === undefined) {
-	num2 = num1;
-	num1 = num1 - num1;
-}
+const [num1, num2] = [nums[0], nums[1]];
 
 function isNotNumber(arg1, arg2) {
+
 	if (isNaN(arg1)) {
 		console.log(colors.bgYellow.red.bold("Ошибка ввода! Указанное значение начала диапазона - не число!"));
 		return false;
@@ -52,23 +44,12 @@ function primeNums(arg1, arg2) {
 	return primeArr;
 }
 
-
 function colorsNum() {
-
 	const arr = primeNums(num1, num2);
 	if (arr.length == 0) {
 		console.log(colors.bgRed.bold("Простые числа в указанном диапазоне отсутствуют..."));
 	}
 	console.log(arr);
-
-	const arrCol = [];
-	arr.map((el, idx) => {
-
-			arrCol.push(el += "!");
-	});
-	console.log(arrCol);
-
 }
-
 
 colorsNum();
