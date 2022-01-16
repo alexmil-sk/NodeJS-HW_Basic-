@@ -1,11 +1,24 @@
 const colors = require('colors/safe');
 
+
+const elColors = {
+	green: 0,
+	yellow: 1,
+	red: 2,
+}
+
+let currentColor = elColors.green;
+
+const changeColor = () => {
+	currentColor++;
+	if (currentColor > elColors.red) {
+		currentColor = elColors.green;
+	}
+}
+
 const nums = process.argv.slice(2);
 let [num1, num2] = [nums[0], nums[1]];
 
-//process.argv.forEach((value, index) => {
-//	console.info(colors.bgYellow.black('forEach:', value + ': ' + index));
-//});
 
 if (num2 === undefined) {
 	num2 = num1;
@@ -46,29 +59,39 @@ function primeNums(arg1, arg2) {
 			isPrime = false
 		};
 		if (isPrime == true) {
-			primeArr.push(i);
+
+			switch (currentColor) {
+				case elColors.green:
+					primeArr.push(i+'.green');
+					console.log(colors.bgGreen(' ') + colors.green(' ' + i));
+					break;
+
+				case elColors.yellow:
+					primeArr.push(i+'.yellow');
+					console.log(colors.bgYellow(' ') + colors.yellow(' ' + i));
+					break;
+
+				case elColors.red:
+					primeArr.push(i+'.red');
+					console.log(colors.bgRed(' ') + colors.red(' ' + i));
+					break;
+			}
+
+			changeColor();
+
 		}
 	}
 	return primeArr;
 }
 
-
-function colorsNum() {
+function noPrimeNum(primeNum) {
 
 	const arr = primeNums(num1, num2);
 	if (arr.length == 0) {
 		console.log(colors.bgRed.bold("Простые числа в указанном диапазоне отсутствуют..."));
 	}
+
 	console.log(arr);
-
-	const arrCol = [];
-	arr.map((el, idx) => {
-
-			arrCol.push(el += "!");
-	});
-	console.log(arrCol);
-
 }
 
-
-colorsNum();
+noPrimeNum();
