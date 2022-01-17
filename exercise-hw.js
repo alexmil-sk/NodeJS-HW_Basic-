@@ -15,3 +15,5 @@ setTimeout(() => {
 console.log('Record 5');
 
 Promise.resolve().then(() => Promise.resolve().then(() => console.log('Record 6')));
+
+//1 5 6 2 3 4
