@@ -2,18 +2,10 @@ const colors = require('colors/safe');
 const EventEmitter = require('events');
 
 
-class MyEmitter extends EventEmitter {}
-
-const myEmitter = new MyEmitter();
-
-myEmitter.on('event', () => {
-	console.log(colors.bgGreen.black('Введите дату и время'));
-});
-myEmitter.emit('event');
-
-
-
 Promise.resolve(process.argv)
+	.then(() => {
+		console.log(colors.bgGreen.black('Введите дату и время'));
+	})
 	.then(() => {
 		console.log('process.argv', process.argv)
 		const args = process.argv;

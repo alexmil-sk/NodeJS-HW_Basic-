@@ -8,7 +8,7 @@ const [arg1, arg2, arg3, arg4, arg5, arg6] = [args[2], args[3], args[4], args[5]
 
 //console.log(colors.bgMagenta.black(`Ваши аргументы: Год ${arg1}, Месяц ${arg2}, День ${arg3}, Час ${arg4}, Минут ${arg5}, Секунд ${arg6}`));
 
-const dest = new Date(arg1, arg2, arg3, arg4, arg5, arg6).getTime();
+//const dest = new Date(arg1, arg2, arg3, arg4, arg5, arg6).getTime();
 
 //console.log(colors.bgBlue.black('Обратный отсчет начался...'));
 
@@ -23,7 +23,7 @@ const dest = new Date(arg1, arg2, arg3, arg4, arg5, arg6).getTime();
 //;_Важно, чтобы работа программы основывалась на событиях.
 
 
-//; const dest = new Date('jan 17, 2022 11:02:00').getTime();
+const dest = new Date('jan 19, 2022 13:47:00').getTime();
 //; const dest = new Date(2022, 0, 17, 11, 21, 0).getTime();
 //const dest = new Date(arg1, arg2, arg3, arg4, arg5, arg6).getTime();
 
@@ -42,12 +42,12 @@ const interval = setInterval(() => {
 	let sec = parseInt((diff % (1000 * 60)) / 1000);
 
 	if (days == 0 && hrs == 0 && min == 0 && sec == 0) {
-		console.log(colors.bgRed.black('Обратный отсчет завершен.'));
+		console.log(colors.bgGreen.black('Counter 3'), colors.bgRed.black('Обратный отсчет завершен.'));
 		clearInterval(interval);
 		return;
 	}
 
-	console.log(colors.bgYellow.black('days: ', days + ' / hrs: ', hrs + ' / min: ', min + ' / sec: ', sec));
+	console.log(colors.bgGreen.black('Counter 3'), colors.bgYellow.black('days: ', days + ' / hrs: ', hrs + ' / min: ', min + ' / sec: ', sec));
 
 }, 1000);
 
