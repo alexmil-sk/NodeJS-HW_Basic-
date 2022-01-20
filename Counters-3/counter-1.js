@@ -1,6 +1,6 @@
 const colors = require('colors/safe');
 
-const dest = new Date('jan 20, 2022 15:40:20').getTime();
+const dest = new Date('jan 20, 2022 12:31:20').getTime();
 
 const interval = setInterval(() => {
 

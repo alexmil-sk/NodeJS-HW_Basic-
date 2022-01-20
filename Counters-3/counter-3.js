@@ -1,7 +1,7 @@
 const colors = require('colors/safe');
 
 
-const dest = new Date('jan 20, 2022 15:47:14').getTime();
+const dest = new Date('jan 20, 2022 12:33:14').getTime();
 
 
 
@@ -24,5 +24,7 @@ const interval = setInterval(() => {
 	}
 
 	console.log(colors.bgMagenta.black('Counter 3'), colors.bgMagenta.black('days: ', days + ' / hrs: ', hrs + ' / min: ', min + ' / sec: ', sec));
+	console.log(colors.yellow("=================================================="));
+
 
 }, 1000);

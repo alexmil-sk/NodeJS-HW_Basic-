@@ -1,5 +1,16 @@
 const colors = require('colors/safe');
-//const startjs = require('./start.js');
+
+//;=========================================================================
+
+//;_Напишите программу, которая будет принимать на вход несколько аргументов: дату и время в формате:
+//, « час - день - месяц - год».
+//;_Задача программы— создавать для каждого аргумента таймер с обратным отсчётом: посекундный вывод в терминал состояния таймеров(сколько осталось).
+//;_По истечении какого - либо таймера, вместо сообщения о том, сколько осталось, требуется показать сообщение о завершении его работы.
+//;_Важно, чтобы работа программы основывалась на событиях.
+
+//;=========================================================================
+
+
 
 //#_0_Подключаем модуль событий
 
@@ -13,22 +24,13 @@ const emitter = new EventEmitter();
 
 const counters = [{
 		type: 'counter1',
-		//payload: 'Date 1'
-		//payload: new Date(2022, 0, 19, 13, 0, 0).getTime()
-		//payload: require('./counter-1.js')
 	},
 	{
 		type: 'counter2',
-		//payload: 'Date 2'
-
-		//payload: require('./counter-2.js')
-		//payload: new Date(2022, 0, 19, 14, 0, 0).getTime()
 	},
 	{
 		type: 'counter3',
-		//payload: 'Date 3'
-		//payload: require('./counter-3.js')
-		//payload: new Date(2022, 0, 19, 15, 0, 0).getTime()
+
 	},
 ];
 
@@ -37,34 +39,35 @@ const counters = [{
 class Counter {
 	constructor({
 		type,
-		//payload
 	}) {
 		this.type = type;
-		//this.payload = payload;
 	}
 }
 
-//#_4_Переключаемся между счетчиками
+//#_4_Генерация номера счетчика
 
-const createCounterNum = (min, max) => {
-	return Math.floor(Math.random() * (max - min + 1) + min);
-
+function generateNumber() {
+	if (!generateNumber.counter) {
+		generateNumber.counter = 0;
+	} else if (generateNumber.counter === counters.length) {
+		generateNumber.counter = 0;
+	}
+	return generateNumber.counter++;
 }
 
-//#_4_Определяем номер счетчика
+
+//#_5_Определяем номер счетчика
 
 const getNewCounter = () => {
-	const newCounterIndex = createCounterNum(0, counters.length - 1);
+	const newCounterIndex = generateNumber();
 	const counterParams = counters[newCounterIndex];
-	
+
 
 	return new Counter(counterParams);
 
 }
 
-console.log('getNewCounter:', getNewCounter());
-
-//#_5_Создание событий счетчика
+//#_6_Создание событий счетчика
 
 const startCount = async () => {
 	const {
@@ -76,24 +79,21 @@ const startCount = async () => {
 }
 
 
-//#_4_Создаем обработчики событий
+//#_7_Создаем обработчики событий
 
 class StartCounter {
 	static counter1() {
 		require('./counter-1.js');
-		console.log(colors.yellow("=================================================="));
 	}
 	static counter2() {
 		require('./counter-2.js')
-		console.log(colors.yellow("=================================================="));
 	}
 	static counter3() {
 		require('./counter-3.js')
-		console.log(colors.yellow("=================================================="));
 	}
 }
 
-//#_5_Запуск таймеров
+//#_8_Запуск таймеров
 
 emitter.on('counter1', StartCounter.counter1);
 emitter.on('counter2', StartCounter.counter2);

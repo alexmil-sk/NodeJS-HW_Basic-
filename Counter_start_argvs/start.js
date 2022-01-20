@@ -6,14 +6,10 @@ class MyEmitter extends EventEmitter {}
 
 const myEmitter = new MyEmitter();
 
-myEmitter.on('event', () => {
-	console.log(colors.bgGreen.black('Введите дату и время'));
-});
-myEmitter.emit('event');
-
-
-
 Promise.resolve(process.argv)
+	.then(() => {
+		console.log(colors.bgGreen.black('Данные введены корректно...'));
+	})
 	.then(() => {
 		console.log('process.argv', process.argv)
 		const args = process.argv;
