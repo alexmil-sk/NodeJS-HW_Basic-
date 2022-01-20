@@ -17,7 +17,7 @@ Promise.resolve(process.argv)
 		if (arg6) {
 			console.log(colors.bgMagenta.black(`Ваши аргументы: Год ${arg1}, Месяц ${arg2}, День ${arg3}, Час ${arg4}, Минут ${arg5}, Секунд ${arg6}`));
 			console.log(colors.bgBlue.black('Обратный отсчет начался...'));
-			require('./index.js');
+			require('./counter.js');
 		} else {
 			console.log(colors.bgRed('Данные введены не полностью!...'));
 			console.log(colors.bgGreen.black('Введите дату и время'));

@@ -32,6 +32,6 @@ setTimeout(() => {
 
 
 function foo() {
-		require('./start.js');
-
+		require('./Counter_argvs/start.js');
+		require('./Counters-3/start.js');
 }
