@@ -32,6 +32,6 @@ setTimeout(() => {
 
 
 function foo() {
-		require('./Counter_argvs/start.js');
-		require('./Counters-3/start.js');
+
+	console.log('СТРОКА');
 }
