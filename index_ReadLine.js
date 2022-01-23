@@ -43,4 +43,5 @@ rl.on('line', (line) => {
 		//console.log(colors.bgMagenta.black(line));
 		writeStreamIp_34.write(line.toString() + '\n');
 	}
+	rl.close();
 });
