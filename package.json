@@ -4,7 +4,6 @@
   "description": "hw for course Node.js GeekBrains",
   "main": "index.js",
   "scripts": {
-    "select": "node cli_select.js",
     "rl": "node cli_rl.js"
   },
   "author": "Aleksej",
