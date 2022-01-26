@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-		"cli": "node cli.js",
     "dev": "nodemon index.js"
   },
   "author": "Aleksej",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
+    "inquirer": "^8.2.0",
+    "inquirer-directory": "^2.2.0",
+    "inquirer-file-tree-selection-prompt": "^1.0.15",
     "yargs": "^17.3.1"
   },
   "devDependencies": {
