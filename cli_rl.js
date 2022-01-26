@@ -85,5 +85,6 @@ inquirer
 			if (line.includes(findStr)) {
 				writeStream.write(line.toString() + '\n');
 			}
+			rl.close();
 		});
 	});

@@ -4,8 +4,8 @@
   "description": "hw for course Node.js GeekBrains",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "select": "node cli_select.js",
+    "rl": "node cli_rl.js"
   },
   "author": "Aleksej",
   "license": "ISC",
