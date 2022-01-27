@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-		"cli": "node cli.js",
     "dev": "nodemon index.js"
   },
   "author": "Aleksej",
