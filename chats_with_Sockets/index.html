@@ -25,15 +25,10 @@
 		const input = document.querySelector('#input');
 		const button = document.querySelector('#button');
 
-		const random = parseInt(Math.random() * 100);
-
-		const user = prompt('Введите ваше имя', `user_${random}`);
-
-
 		button.addEventListener('click', () => {
 			console.log('Submit button was clicked..');
 			const sendData = {
-				nickname: user,
+				nickname: 'User',
 				message: input.value,
 			};
 
